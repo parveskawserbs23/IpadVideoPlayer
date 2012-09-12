@@ -20,7 +20,7 @@
 
   if($.browser.mozilla){
     $('#webkit_movie_wrapper').remove();
-    $('#firefox_movie_wrapper').append("<p class='tk-ff-tisa-web-pro'>You should see this if you are using Firefox</p><video id='bubbles' width='480' height='360' controls='controls' src='content/bubbles.ogv' poster='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.jpg'>");
+    $('#firefox_movie_wrapper').append("<p class='tk-ff-tisa-web-pro'>You should see this if you are using Firefox</p><video id='bubbles' width='480' height='360' controls='controls' src='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.ogv' poster='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.jpg'>");
   }  
 
   var ieVersion = $.browser.version;
@@ -231,7 +231,7 @@
 <body>
   <div id="page_wrap">
     <div id="headline">
-      
+      <h1>HTML 5 Demo</h1>
     </div><!-- end headline -->
     
     <div id="movie">
@@ -245,11 +245,11 @@
                 <!--[if lt IE 9]>
                 <p class="tk-ff-tisa-web-pro">You should see this if you are using Internet Explorer. This page probably looks like crap too because your browser sucks and does not have any CSS3 goodies.</p>
                               <object classid='clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B' standby="data is loading..." codebase='http://www.apple.com/qtactivex/qtplugin.cab'  width='480' height='376'>
-                              <param name='src' value='content/bubbles.ogv'>
+                              <param name='src' value='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.mov'>
                               <param name='autoplay' value='true'>
                               <param name='type' value='video/quicktime' width='480' height='376'>
                               <param name='controller' value='true'>
-                              <embed src='content/bubbles.ogv'  width='480'  height='376'autoplay='true' controller='true' type='video/quicktime' pluginspage='http://www.apple.com/quicktime/download/'>
+                              <embed src='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.mov  width='480'  height='376'autoplay='true' controller='true' type='video/quicktime' pluginspage='http://www.apple.com/quicktime/download/'>
                               </object>
                               <![endif]-->
                 
