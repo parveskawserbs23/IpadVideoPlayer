@@ -608,8 +608,8 @@
             $('#movie').show();
             //             $("#videoplayer>source").attr("src", "content/animations/120522_Riedmatt_Center_HD_264.mp4"​​​​)​
             var a = $(this).attr('content');
-            var b = $(this + ' img').attr('src');
-            loadAnotherVideo(a, b);
+           
+            loadAnotherVideo(a);
             //$("#movie").load("/ #pageinfo");
             $('#videothumbframe').hide();
         });
@@ -738,12 +738,12 @@
                 });
             });
         }
-        function loadAnotherVideo(videourl, poster) {
+        function loadAnotherVideo(videourl) {
             var video = document.getElementsByTagName('video')[0];
             // var sources = video.getElementsByTagName('source');
             //sources[0].src = videourl; //'content/animations/120522_Riedmatt_Center_HD_264.mp4';
             $(video).attr("src", videourl);
-            $(video).attr("poster", poster);
+            
             video.load();
         }
         function unloadvideo() {
