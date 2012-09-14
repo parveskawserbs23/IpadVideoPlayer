@@ -1,141 +1,805 @@
-<!DOCTYPE html>
-
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<title></title>
-	<!-- Date: 2010-05-13 -->
-	
-	<!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-	
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
-		<!--
-    <script type="text/javascript" src="http://use.typekit.com/vwo1moh.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    -->
-	
-  <script type="text/javascript">
-  $(document).ready(function() {
-
-  if($.browser.mozilla){
-    $('#webkit_movie_wrapper').remove();
-    $('#firefox_movie_wrapper').append("<p class='tk-ff-tisa-web-pro'>You should see this if you are using Firefox</p><video id='bubbles' width='480' height='360' controls='controls' src='oceans-clip.ogv' poster='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.jpg'>");
-  }  
-
-  var ieVersion = $.browser.version;
-
-  if ($.browser.msie && ieVersion < 9 ) { 
-      $('#webkit_movie_wrapper').remove();
-      $('#firefox_movie_wrapper').remove();
-  }
-
-  else{
-    $('#ie_movie').remove();
-  }    
-  }); //end doc ready
-  </script>
-  
-	
-<style type="text/css">
-
-  body{
-    background: url(grid.jpg) repeat;
-  }
-  
-  #page_wrap{
-    margin: 0 auto;
-    width: 960px;
-    height: auto;
-  }
-  
-  #headline{
-    background-image: -moz-linear-gradient(86% 91% 234deg,#8FC4D9, #BBE2F2, #D0E9F2 91%);
-    background-image: -webkit-gradient(linear, 5% 100%, 14% 20%, from(#8FC4D9), to(#BBE2F2), color-stop(1,#D0E9F2));
- 
-    margin:0 auto;
-    width:590px;
-    -moz-border-radius: 5px;
-    -moz-box-shadow: 3px 3px 12px #000;
-    -webkit-border-radius: 5px;
-    -webkit-box-shadow: 3px 3px 12px #000;
-  }
-  
-  #headline h1{
-    color: #fff;
-    font-size:52px;
-    letter-spacing:3px;
-    padding:10px;
-    text-align:center;
-    text-shadow: -1px -1px 2px #CED0D6;
-  
-  }
-  
-  #webkit_movie_wrapper p{
-    font-size: 1em;
-    color: #fff;
-    text-shadow: -1px -1px 2px #CED0D6;
-    font-weight: bold;
-  }
-  
-  #firefox_movie_wrapper p{
-    font-size: 1em;
-    color: #fff;
-    text-shadow: -1px -1px 8px #000;
-    font-weight: bold;
-  }
-  
-  
-  #movie{
-    margin: 50px auto 0 auto;
-    text-align: center;
-    width:590px;
-    background-image: -moz-linear-gradient(86% 91% 234deg,#8FC4D9, #BBE2F2, #D0E9F2 91%);
-    background-image: -webkit-gradient(linear, 5% 100%, 14% 20%, from(#8FC4D9), to(#BBE2F2), color-stop(1,#D0E9F2));
-    -moz-border-radius: 5px;
-     -moz-box-shadow: 3px 3px 12px #000;
-     -webkit-border-radius: 5px;
-     -webkit-box-shadow: 3px 3px 12px #000;
-     padding: 15px 0 15px 0;
-  }
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, width=device-width;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="content/js/jquery-1.7.1.min.js"></script>
+    <script src="content/js/jquery.mobile-1.1.1.min.js"></script>
+    <link rel="stylesheet" href="content/css/jquery.mobile.structure-1.1.1.min.css" />
+    <link rel="Stylesheet" href="content/css/BlackThemeForLatitude.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/Custom.css" />
+    <link rel="stylesheet" type="text/css" href="content/css/index.css" />
+    <link rel="stylesheet" href="content/css/royalslider.css">
+    <link rel="stylesheet" href="content/css/minimal.css">
+    <link rel="stylesheet" href="content/css/video-js.min.css" />
+    <script src="content/js/jquery_002.js"></script>
+    <script src="content/js/video.min.js"></script>
+    <script src="content/js/LatitudeCustomSlider.js"></script>
+    <title>Latitude-23</title>
+    <style type="css/text">
+        body
+        {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            width: 100%;
+            text-align: center;
+            padding-top: 35px;
+        }
+        #webkit_movie_wrapper p
+        {
+            font-size: 1em;
+            color: #fff;
+            text-shadow: -1px -1px 2px #CED0D6;
+            font-weight: bold;
+        }
+        #firefox_movie_wrapper p
+        {
+            font-size: 1em;
+            color: #fff;
+            text-shadow: -1px -1px 8px #000;
+            font-weight: bold;
+        }
+        #movie
+        {
+            margin: 50px auto 0 auto;
+            text-align: center;
+            width: 590px; /*background-image: -moz-linear-gradient(86% 91% 234deg,#8FC4D9, #BBE2F2, #D0E9F2 91%);
+    background-image: -webkit-gradient(linear, 5% 100%, 14% 20%, from(#8FC4D9), to(#BBE2F2), color-stop(1,#D0E9F2));*/
+            -moz-border-radius: 5px;
+            -moz-box-shadow: 3px 3px 12px #000;
+            -webkit-border-radius: 5px;
+            -webkit-box-shadow: 3px 3px 12px #000;
+            padding: 15px 0 15px 0;
+        }
+    </style>
 </head>
 <body>
-  <div id="page_wrap">
-    <div id="headline">
-     
-    </div><!-- end headline -->
-    
-    <div id="movie">
-      <div id="webkit_movie_wrapper">
-        
-        <video id="bubbles" width="480" height="360" controls="controls" src="120830_STN_HD.m4v" poster="http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.jpg">
+    <div id="page" data-role="page">
+        <div id="topbar" data-role="header">
+            <div id="titleContainer">
+                <h1 id="headerTitle">
+                </h1>
+            </div>
+            <div id="submenu" data-role="navbar" class="nav-button-top" data-grid="d">
+                <ul>
+                    <li><a href="#" id="plan" data-role="button" data-theme="b">Plan</a></li>
+                    <li><a href="#" id="exterior" data-role="button" data-theme="b">Exterior</a></li>
+                    <li><a href="#" id="interior" data-role="button" data-theme="b">Interior</a></li>
+                    <li><a href="#" id="stand" data-role="button" data-theme="b">Stand</a></li>
+                    <!--<li><a href="#" id="infrastructure" data-role="button" data-theme="b">Infrastructure</a></li>-->
+                    <li><a href="#" id="bathkitchen" data-role="button" data-theme="b">Bath-Kitchen</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content" style="vertical-align: middle;">
+            <div id="splashScreen">
+                <table id="splashscreentable" cellpadding="0" cellspacing="0" width="100%" style="text-align: center;
+                    vertical-align: middle;">
+                    <tr>
+                        <td style="vertical-align: middle;">
+                            <p>
+                                <img id="splashLogo" src="content/welcome/HomeHorizontal.jpg" /></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="planContent" style="display: none;">
+                <div id="Div5" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/2P01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/2P02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/2P03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/2P04.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/2P06.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/3F01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/3F02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/3F03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/3F04.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/PLAN/3F05.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="exteriorContent">
+                <div id="Div2" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E04.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E05.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E06.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E07.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E08.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E09A.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E09B.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E10.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E11.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E12.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E13.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/E14.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX09.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX15.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX16.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX17.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX18.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX20.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX25.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX33.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX36.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX39.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX42.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX48.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX49.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX50.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX53.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX54.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX55.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/EXTERIOR/EX56.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="interiorContent" style="display: none;">
+                <div id="Div1" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN00.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN04.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN05.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN06.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN07.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN08.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN09.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN11.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN14.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN15.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN17.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN18.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN19.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN20.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN21.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN23.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN24.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN25.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN26.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INTERIOR/IN27.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="standContent">
+                <div id="Div3" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/STANDS/S01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/STANDS/S02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/STANDS/S03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/STANDS/S05.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="infrastructureContent" style="display: none;">
+                <div id="banner-rotator2" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/INFRASTRUCTURE/EX42.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="bathkitchenContent">
+                <div id="banner-rotator" style="overflow: visible; width: 100%; vertical-align: middle !important;"
+                    class="royalSlider minimal">
+                    <div class="royalWrapper" style="vertical-align: middle !important;">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important; height: 25px; width: 30px;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/BATHKITCHEN/B01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important; height: 25px; width: 30px;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/BATHKITCHEN/B02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important; height: 25px; width: 30px;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/BATHKITCHEN/B03.jpg">
+                            </li>
+                            <li style="height: 25px; width: 30px;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/BATHKITCHEN/K01.jpg">
+                            </li>
+                            <li style="height: 25px; width: 30px;" class="royalSlide">
+                                <img class="royalImage" src="content/images/ARCHITECTURAL/BATHKITCHEN/K02.jpg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="modelingContent">
+                <div id="Div4" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/FUR_01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/FUR_02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/FUR_03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/FUR_04.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/FUR_05.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/M01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/M02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/M03.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/MODEL/M04.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="animationContent">
+                <div id="movie">
+                    <div id="webkit_movie_wrapper">
+                        <p align="center">
+                            <video id="bubbles" width="480" height="360" controls="controls" src="content/animations/3.120830_STN_HD.m4v"
+                                poster="">
                          </video>
-        
-      </div><!-- end webkit_movie_wrapper -->
-      
-        <div id="firefox_movie_wrapper">
-          
-        </div><!-- end firefox_movie_wrapper -->
-        
-            <div id="ie_movie_wrapper">
-                <!--[if lt IE 9]>
-                <p class="tk-ff-tisa-web-pro">You should see this if you are using Internet Explorer. This page probably looks like crap too because your browser sucks and does not have any CSS3 goodies.</p>
-                              <object classid='clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B' standby="data is loading..." codebase='http://www.apple.com/qtactivex/qtplugin.cab'  width='480' height='376'>
-                              <param name='src' value='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.mov'>
-                              <param name='autoplay' value='true'>
-                              <param name='type' value='video/quicktime' width='480' height='376'>
-                              <param name='controller' value='true'>
-                              <embed src='http://www.robwalshonline.com//demos/html5_video_demo/bubbles/bubbles.mov  width='480'  height='376'autoplay='true' controller='true' type='video/quicktime' pluginspage='http://www.apple.com/quicktime/download/'>
-                              </object>
-                              <![endif]-->
-                
-            </div><!-- end ie_movie_wrapper -->
-      
-    </div><!-- end movie -->
-    
-  </div><!-- end page_wrap -->
+                        </p>
+                    </div>
+                    <!-- end firefox_movie_wrapper -->
+                </div>
+                <!-- end movie -->
+                <div id="videothumbframe">
+                    <div class="ui-grid-b" style="text-align: center; vertical-align: middle;">
+                        <div class="ui-block-a">
+                            <h1>
+                                Latitude Favorites
+                            </h1>
+                        </div>
+                        <div class="ui-block-b">
+                        </div>
+                        <div class="ui-block-c">
+                        </div>
+                        <!-- Add First Row -->
+                        <div class="ui-block-a">
+                            <span href="#" content="content/animations/120522_Riedmatt_Center_HD_264.mp4">
+                                <img src="content/icons/1.png" width="70%" />
+                            </span>
+                            <br />
+                            <span>Demo Reel 2012 </span>
+                        </div>
+                        <div class="ui-block-b">
+                            <span href="#" content="content/animations/120830_STN_HD_x264.mp4">
+                                <img src="content/icons/2.png" width="70%" /></span><br />
+                            <span>Danish Management group </span>
+                        </div>
+                        <div class="ui-block-c">
+                            <span href="#" content="content/animations/120830_DU_ENERGY_Newcut_x264.mp4">
+                                <img src="content/icons/3.png" width="70%" /></span><br />
+                            <span>Swiss Housing </span>
+                        </div>
+                        <!-- Add blanck Row -->
+                        <div class="ui-block-a">
+                            <br />
+                        </div>
+                        <div class="ui-block-b">
+                            <br />
+                        </div>
+                        <div class="ui-block-c">
+                            <br />
+                        </div>
+                        <!-- Add Second Row -->
+                        <div class="ui-block-a">
+                            <span href="#" content="content/animations/120830_KinderGarden_Newcut1_x264.mp4">
+                                <img src="content/icons/4.png" width="70%" />
+                            </span>
+                            <br />
+                            <span>Kindergarden </span>
+                        </div>
+                        <div class="ui-block-b">
+                            <span href="#" content="content/animations/120830_DU_ENERGY_Newcut_x264.mp4">
+                                <img src="content/icons/5.png" width="70%" /></span><br />
+                            <span>Gulshan Rasidence </span>
+                        </div>
+                        <div class="ui-block-c">
+                            <span href="#" content="content/animations/120830_STN_HD_x264.mp4">
+                                <img src="content/icons/6.png" width="70%" /></span><br />
+                            <span>Forum </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="gamingContent">
+                <div id="Div6" style="overflow: visible; width: 100%;" class="royalSlider minimal">
+                    <div class="royalWrapper">
+                        <ul style="width: 120px;" class="royalSlidesContainer grab-cursor">
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/GAME/ga01.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/GAME/ga02.jpg">
+                            </li>
+                            <li style="margin-right: 20px ! important;" class="royalSlide">
+                                <img class="royalImage" src="content/images/GAME/ga03.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="contractUsContent" data-role="content" style="display: none;">
+                <fieldset class="ui-grid-c" style="vertical-align: middle !important;">
+                    <div class="ui-block-a">
+                        <a id="contactemail" href="info@latitude-23.net" data-role="button" data-icon="custom"
+                            data-iconpos="top">Email</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="https://www.facebook.com/latitude23.bd" id="facebook" data-role="button"
+                            data-icon="custom" data-iconpos="top">Facebook</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="http://vimeo.com/user10809974" id="vimo" data-role="button" data-icon="custom"
+                            data-iconpos="top">Vimeo</a>
+                    </div>
+                    <div class="ui-block-d">
+                        <a href="http://latitude-23.net" id="web" data-role="button" data-icon="custom" data-iconpos="top">
+                            Web</a>
+                    </div>
+                </fieldset>
+                <h2 style="text-align: right !important; padding-right: 10px;">
+                    www.latitude-23.net</h2>
+            </div>
+        </div>
+        <div id="footer" data-role="footer" class="nav-button" data-position="fixed">
+            <div data-role="navbar" data-grid="d">
+                <ul>
+                    <li><a href="#" id="architectural" data-icon="custom">Image</a></li>
+                    <li><a href="#" id="animation" data-icon="custom">Movie</a></li>
+                    <li><a href="#" id="gaming" data-icon="custom">Gaming</a></li>
+                    <li><a href="#" id="modeling" data-icon="custom">Model</a></li>
+                    <li><a href="#" id="contacts" data-icon="custom">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova-2.0.0.js"></script>
+    <script type="text/javascript">
 
+        $('a').click(function () {
+            HideContent();
+            switch ($(this).attr('id')) {
+                case 'architectural':
+                    $('#topbar div#submenu').show();
+                    $('#content div#planContent').show();
+                    //LoadGallary();
+                    ShowHeader();
+                    $('#plan').click();
+                    break;
+                case 'modeling':
+                    $('#content div#modelingContent').show();
+                    readDeviceOrientation();
+                    HideHeader();
+                    break;
+                case 'animation':
+                    $('#content div#animationContent').show();
+                    HideHeader();
+                    break;
+                case 'gaming':
+                    $('#content div#gamingContent').show();
+                    readDeviceOrientation();
+                    HideHeader();
+                    break;
+                case 'contacts':
+                    $('#content div#contractUsContent').show();
+                    HideHeader();
+                    break;
+                case 'interior':
+                    $('#content div#interiorContent').show();
+                    readDeviceOrientation();
+                    break;
+                case 'exterior':
+                    $('#content div#exteriorContent').show();
+                    readDeviceOrientation();
+                    break;
+                case 'stand':
+                    $('#content div#standContent').show();
+                    readDeviceOrientation();
+                    break;
+                case 'plan':
+                    $('#content div#planContent').show();
+                    readDeviceOrientation();
+
+                    break;
+                case 'infrastructure':
+                    $('#content div#infrastructureContent').show();
+                    readDeviceOrientation();
+                    break;
+                case 'bathkitchen':
+                    $('#content div#bathkitchenContent').show();
+                    readDeviceOrientation();
+                    break;
+            }
+            if ($(this).attr('id') != 'architectural') {
+                $('#topbar div#titleContainer').show();
+                $('#headerTitle').html(this.text);
+            }
+        });
+        $('#videothumbframe span').click(function () {
+            $('#movie').show();
+            //             $("#videoplayer>source").attr("src", "content/animations/120522_Riedmatt_Center_HD_264.mp4"​​​​)​
+            // var a = $(this).attr('content');
+            //loadAnotherVideo(a);
+            $('#videothumbframe').hide();
+        });
+        $('#goback').click(function () {
+            $('#movie').hide();
+            $('#videothumbframe').show();
+        });
+        function HideContent() {
+            $('#content>div').hide();
+        }
+        function HideHeader() {
+            $('#topbar>div').hide();
+        }
+        function ShowHeader() {
+            $('#topbar>div').show();
+        }
+        function ShowSplashScreen() {
+            $('#splashScreen').show();
+        }
+        function LoadGallary() {
+            jQuery(document).ready(function ($) {
+                $('.royalSlider').royalSlider({
+                    imageAlignCenter: true,
+                    imageScaleMode: "fit",
+                    hideArrowOnLastSlide: false,
+                    slideSpacing: 20,
+                    autoScaleSlider: true,
+                    autoScaleSliderWidth: 120,
+                    autoScaleSliderHeight: 122
+                    //62.5
+                });
+            });
+
+
+        }
+        function detectDevice() {
+            var useragent = navigator.userAgent;
+            useragent = useragent.toLowerCase();
+
+            if (useragent.indexOf('iphone') != -1) {
+                alert("iphone!!!");
+            }
+            else if (useragent.indexOf('ipad2') != -1) {
+                alert('ipad');
+            }
+            else if (useragent.indexOf('android')) {
+                alert('android');
+            }
+            else {
+                alert("Go with normal browser!!!");
+            }
+        }
+        window.onorientationchange = readDeviceOrientation;
+
+        function readDeviceOrientation() {
+            // window.location.reload();
+
+            switch (window.orientation) {
+                case 0:
+                    // Portrait
+                    LoadPotaitGallary(768);
+                    //alert('Portrait');
+                    break;
+                case 180:
+                    // Portrait (Upside-down)
+                    LoadPotaitGallary(768);
+                    //alert('Portrait');
+                    break;
+                case -90:
+                    // Landscape (Clockwise)
+                    LoadLandScapeGallary();
+                    //alert('Landscape');
+                    break;
+                case 90:
+                    // Landscape  (Counterclockwise)
+                    LoadLandScapeGallary();
+                    //alert('Landscape');
+                    break;
+                default:
+                    var w = $(document).width();
+                    //Ipad LandScape Only for Load Time
+                    if (w == 1024) {
+                        LoadLandScapeGallary();
+                        $('#contractUsContent').css("margin-top", "20%");
+
+                    }
+                    //Ipad Portrait Only for Load Time
+                    else if (w == 768) {
+                        LoadPotaitGallary(w);
+                        $('#contractUsContent').css("margin-top", "40%");
+                    }
+            }
+        }
+        function LoadPotaitGallary(para) {
+            $('#contractUsContent').css("margin-top", "40%");
+            $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
+            loadsplashScreen(para);
+
+            jQuery(document).ready(function ($) {
+                $('.royalSlider').royalSlider({
+                    imageAlignCenter: true,
+                    imageScaleMode: "fit",
+                    hideArrowOnLastSlide: false,
+                    slideSpacing: 20,
+                    autoScaleSlider: true,
+                    autoScaleSliderWidth: 120,
+                    autoScaleSliderHeight: 134
+                });
+            });
+        }
+        function LoadLandScapeGallary() {
+            $('#contractUsContent').css("margin-top", "20%");
+            $('#splashLogo').attr("src", "content/welcome/HomeHorizontal.jpg");
+            loadsplashScreen();
+
+            jQuery(document).ready(function ($) {
+                $('.royalSlider').royalSlider({
+                    imageAlignCenter: true,
+                    imageScaleMode: "fit",
+                    hideArrowOnLastSlide: false,
+                    slideSpacing: 20,
+                    autoScaleSlider: true,
+                    autoScaleSliderWidth: 120,
+                    autoScaleSliderHeight: 70
+                });
+            });
+        }
+        function loadAnotherVideo(videourl) {
+            var video = document.getElementsByTagName('video')[0];
+            var sources = video.getElementsByTagName('source');
+            sources[0].src = videourl; //'content/animations/120522_Riedmatt_Center_HD_264.mp4';
+            video.load();
+        }
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            var w = $(document).width();
+            //Ipad LandScape Only for Load Time
+            if (w == 1024) {
+                LoadLandScapeGallary();
+                $('#contractUsContent').css("margin-top", "20%");
+                $('#splashLogo').attr("src", "content/welcome/HomeHorizontal.jpg");
+            }
+            //Ipad Portrait Only for Load Time
+            else if (w == 768) {
+                LoadPotaitGallary();
+                $('#contractUsContent').css("margin-top", "40%");
+                $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
+            }
+            var h = $(window).height();
+            h = h - $('#footer').height() + $('#topbar').height();
+            $('#splashLogo').height(h);
+            alert('load : ' + h);
+        }
+        function setLineHeight() {
+            $(document).height();
+            $('#content').css("line-height", $(document).height() - 158 + "px");
+        }
+        function loadsplashScreenOrientation(w) {
+
+            //Ipad LandScape Only for Load Time
+            if (w == '1') {
+                $('#splashscreentable').height('700px');
+                $('#splashLogo').width(w + 'px');
+
+            }
+            //Ipad Portrait Only for Load Time
+            else if (w == '0') {
+                $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
+                $('#splashscreentable').height('950px');
+                $('#splashLogo').width(w + 'px');
+
+
+            }
+
+
+        }
+        function loadsplashScreen(parameter) {
+
+            var w = $(document).width();
+            //Ipad LandScape Only for Load Time
+            if (w == 1024) {
+                if (parameter != null || parameter != undefined) {
+                    if (parameter == '768') {
+                        $('#splashscreentable').height('950px');
+                        $('#splashLogo').width(parameter + 'px');
+                    }
+                }
+                else {
+                    $('#splashscreentable').height('700px');
+                    $('#splashLogo').width(w + 'px');
+                }
+
+            }
+            //Ipad Portrait Only for Load Time
+            else if (w == 768) {
+                $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
+                $('#splashscreentable').height('950px');
+                $('#splashLogo').width(w + 'px');
+            }
+        }
+        HideContent();
+        HideHeader();
+        ShowSplashScreen();
+        // detectDevice();
+        // setLineHeight();
+        loadsplashScreen();
+        $(window).bind('orientationchange', orientationHandler);
+
+        function orientationHandler() {
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+ /*  
+ 
+ RoyalSlider
+ 
+ */
+.royalSlider {	
+	position:relative;
+	/* set width and height of slider here, in px, % or em*/
+	width:1024px;
+	height:786px;
+	/* Used to prevent content "jumping" on page load. this property is removed when javascript is loaded and slider is instanciated */
+	overflow:hidden;
+}
+
+
+
+/**
+*  Slides area (set background here)
+*/
+
+.royalSlider .royalWrapper {
+	overflow:hidden;	
+	position:relative;
+
+	width:100%; 
+	height:100%;
+}
+.royalSlider .royalSlide,
+.royalSlider .royalWrapper {
+	/* Bakground behind slides */
+	background: #111111; 
+	background: -moz-linear-gradient(top, #111111 0%, #242424 100%); 	
+	background: -webkit-linear-gradient(top, #111111 0%,#242424 100%); 
+	background: -o-linear-gradient(top, #111111 0%,#242424 100%);
+	background: -ms-linear-gradient(top, #111111 0%,#242424 100%); 	
+	background: linear-gradient(top, #111111 0%,#242424 100%);
+}
+/* slides holder, grabbing container */
+.royalSlider .royalSlidesContainer {
+	position: relative;
+	left: 0;
+	top: 0 !important;
+	list-style:none !important;
+	margin:0 !important;
+	padding:0 !important;
+	border: 0 !important;
+}
+
+
+/* slide item */
+.royalSlider .royalSlide {
+	padding: 0 !important;
+	margin: 0 !important;	
+	border: 0 !important;
+	list-style: none !important;
+	
+	position:relative;
+	float:left;	
+	
+	overflow:hidden;	
+}

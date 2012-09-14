@@ -1,0 +1,171 @@
+﻿.nav-button .ui-btn .ui-btn-inner
+{
+    padding-top: 40px !important;
+}
+.nav-button-top .ui-btn .ui-btn-inner
+{
+    padding-top: 15px !important;
+}
+.nav-button .ui-btn .ui-icon
+{
+    width: 45px !important;
+    height: 45px !important;
+    margin-left: -24px !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+    text-align: center !important;
+}
+.nav-button-contact .ui-navbar .ui-mini
+{
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: -20px !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+    text-align: center !important;
+}
+#architectural .ui-icon
+{
+    background-image: url(../icons/image.png);
+    background-repeat: no-repeat;
+}
+#architectural .ui-btn-text
+{
+    top: 10px;
+}
+#modeling .ui-icon
+{
+    background-image: url(../icons/gaming.png);
+    background-repeat: no-repeat;
+}
+#modeling .ui-btn-text
+{
+    top: 10px;
+}
+#animation .ui-icon
+{
+    background-image: url(../icons/movie.png);
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#animation .ui-btn-text
+{
+    top: 10px;
+}
+#gaming .ui-icon
+{
+    background-image: url(../icons/model.png);
+    background-repeat: no-repeat;
+}
+#gaming .ui-btn-text
+{
+    top: 10px;
+}
+#contacts .ui-icon
+{
+    background-image: url(../icons/contact.png);
+    background-repeat: no-repeat;
+   
+}
+#contacts .ui-btn-text
+{
+    top: 10px;
+}
+
+#interior .ui-icon
+{
+    background-image: url(images/icons.png);
+    background-position: -345px -112px;
+    background-repeat: no-repeat;
+}
+#exterior .ui-icon
+{
+    background-image: url('images/icons.png');
+    background-position: -345px -112px;
+    background-repeat: no-repeat;
+}
+#stand .ui-icon
+{
+    background-image: url(images/icons.png);
+    background-position: -345px -112px;
+    background-repeat: no-repeat;
+}
+#threedmodeling .ui-icon
+{
+    background-image: url(images/icons.png);
+    background-position: -345px -112px;
+    background-repeat: no-repeat;
+}
+#threedfloorplan .ui-icon
+{
+    background-image: url(images/icons.png);
+    background-position: -345px -112px;
+    background-repeat: no-repeat;
+}
+#contractUsContent
+{
+    margin-top: 20%;
+}
+#contractUsContent a
+{
+    height: 150px;
+}
+#contractUsContent .ui-btn .ui-icon
+{
+    width: 45px !important;
+    height: 45px !important;
+    margin-left: -24px !important;
+    margin-top: 25px;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important;
+}
+#contractUsContent .ui-btn-corner-all
+{
+    border-radius: 0 0 0 0;
+}
+#contractUsContent .ui-btn-up-c
+{
+    border: 1px solid #000000;
+}
+#contractUsContent .ui-btn-text
+{
+    /*padding-bottom: 180px !important;*/
+    line-height: 65px;
+    top: 35px;
+}
+#contactemail .ui-icon
+{
+    background-image: url(../icons/email.png);
+    background-repeat: no-repeat;
+}
+#facebook .ui-icon
+{
+    background-image: url(../icons/facebook.png);
+    background-repeat: no-repeat;
+}
+#vimo .ui-icon
+{
+    background-image: url(../icons/vimo.png);
+    background-repeat: no-repeat;
+}
+#web .ui-icon
+{
+    background-image: url(../icons/web.png);
+    background-repeat: no-repeat;
+}
+
+#videothumbframe span {
+    cursor: pointer;
+}
+#videoframe span {
+     cursor: pointer;
+}
