@@ -748,8 +748,6 @@
         }
         function unloadvideo() {
             var video = document.getElementsByTagName('video')[0];
-            // var sources = video.getElementsByTagName('source');
-            //sources[0].src = videourl; //'content/animations/120522_Riedmatt_Center_HD_264.mp4';
             $(video).attr("src", '');
             video.load();
         }
@@ -800,7 +798,6 @@
 
         }
         function loadsplashScreen(parameter) {
-
             var w = $(document).width();
             //Ipad LandScape Only for Load Time
             if (w == 1024) {
@@ -829,8 +826,6 @@
         HideContent();
         HideHeader();
         ShowSplashScreen();
-        // detectDevice();
-        // setLineHeight();
         loadsplashScreen();
         $(window).bind('orientationchange', orientationHandler);
 
