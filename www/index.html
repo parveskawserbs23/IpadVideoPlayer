@@ -399,12 +399,14 @@
                 </div>
             </div>
             <div id="animationContent">
-            
                 <div id="movie" style="display: none;">
-                <div id="goback" style="position: absolute; top: 1px; left: 15px;"> <h2 style="color: black !important;"> Go Back</h2> </div>
+                    <div id="goback" style="position: absolute; top: 1px; left: 15px;">
+                        <h2 style="color: black !important;">
+                            Go Back</h2>
+                    </div>
                     <div id="webkit_movie_wrapper">
                         <p align="center">
-                            <video id="bubbles" width="480" height="360" controls="controls" src="content/animations/3.120830_STN_HD.m4v"
+                            <video id="bubbles" width="480" height="360" controls="controls" src="content/animations/1.DemoReel2012.mp4"
                                 poster="">
                          </video>
                         </p>
@@ -425,7 +427,7 @@
                         </div>
                         <!-- Add First Row -->
                         <div class="ui-block-a">
-                            <span href="#" content="content/animations/3.120830_STN_HD.m4v">
+                            <span href="#" content="content/animations/1.DemoReel2012.mp4">
                                 <img src="content/icons/1.png" width="70%" />
                             </span>
                             <br />
@@ -489,11 +491,23 @@
                     </div>
                 </div>
             </div>
+            <div id="emailUs" style="display: none;">
+                <table id="emailtable" cellpadding="0" cellspacing="0" width="100%" style="text-align: center;
+                    vertical-align: middle;">
+                    <tr>
+                        <td style="vertical-align: middle;">
+                            <h1>
+                                Email Us : info@latitude-23.net
+                            </h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div id="contractUsContent" data-role="content" style="display: none;">
                 <fieldset class="ui-grid-c" style="vertical-align: middle !important;">
                     <div class="ui-block-a">
-                        <a id="contactemail" href="info@latitude-23.net" data-role="button" data-icon="custom"
-                            data-iconpos="top">Email</a>
+                        <a id="contactemail" href="" data-role="button" data-icon="custom" data-iconpos="top">
+                            Email</a>
                     </div>
                     <div class="ui-block-b">
                         <a href="https://www.facebook.com/latitude23.bd" id="facebook" data-role="button"
@@ -580,6 +594,10 @@
                     $('#content div#bathkitchenContent').show();
                     readDeviceOrientation();
                     break;
+                case 'contactemail':
+                    $('#content div#emailUs').show();
+                    HideHeader();
+                    break;
             }
             if ($(this).attr('id') != 'architectural') {
                 $('#topbar div#titleContainer').show();
@@ -592,7 +610,7 @@
             var a = $(this).attr('content');
             var b = $(this + ' img').attr('src');
             loadAnotherVideo(a, b);
-            $("#movie").load("/ #pageinfo");
+            //$("#movie").load("/ #pageinfo");
             $('#videothumbframe').hide();
         });
         $('#goback').click(function () {
@@ -720,9 +738,9 @@
                 });
             });
         }
-        function loadAnotherVideo(videourl,poster) {
+        function loadAnotherVideo(videourl, poster) {
             var video = document.getElementsByTagName('video')[0];
-           // var sources = video.getElementsByTagName('source');
+            // var sources = video.getElementsByTagName('source');
             //sources[0].src = videourl; //'content/animations/120522_Riedmatt_Center_HD_264.mp4';
             $(video).attr("src", videourl);
             $(video).attr("poster", poster);
@@ -765,6 +783,7 @@
             //Ipad LandScape Only for Load Time
             if (w == '1') {
                 $('#splashscreentable').height('700px');
+                $('#emailtable').height('700px');
                 $('#splashLogo').width(w + 'px');
 
             }
@@ -772,6 +791,7 @@
             else if (w == '0') {
                 $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
                 $('#splashscreentable').height('950px');
+                $('#emailtable').height('900px');
                 $('#splashLogo').width(w + 'px');
 
 
@@ -787,11 +807,13 @@
                 if (parameter != null || parameter != undefined) {
                     if (parameter == '768') {
                         $('#splashscreentable').height('950px');
+                        $('#emailtable').height('900px');
                         $('#splashLogo').width(parameter + 'px');
                     }
                 }
                 else {
                     $('#splashscreentable').height('700px');
+                    $('#emailtable').height('700px');
                     $('#splashLogo').width(w + 'px');
                 }
 
@@ -800,6 +822,7 @@
             else if (w == 768) {
                 $('#splashLogo').attr("src", "content/welcome/HomeVertical.jpg");
                 $('#splashscreentable').height('950px');
+                $('#emailtable').height('900px');
                 $('#splashLogo').width(w + 'px');
             }
         }
